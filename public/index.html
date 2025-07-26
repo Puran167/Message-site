@@ -1,18 +1,32 @@
 <!DOCTYPE html>
-<  <!-- 🔵 Chat Container -->
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PuruVerse</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/@joeattardi/emoji-button@4.6.2/dist/index.js"></script>
+</head>
+<body>
+
+  <!-- 🔴 Background Video -->
+  <video autoplay muted loop playsinline id="bgVideo">
+    <source src="video2.mp4" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
+
+  <!-- 🔵 Chat Container -->
   <div id="container">
-    <!-- Header with controls -->
+    
+    <!-- Header -->
     <div id="chat-header">
       <h1 class="welcome-heading">PuruVerse</h1>
       <div id="header-controls">
-        <!-- Dark mode toggle -->
         <div class="theme-toggle">
           <input type="checkbox" id="darkModeToggle">
           <label for="darkModeToggle" class="toggle-label">🌙</label>
         </div>
-        <!-- Online users list for voice calls -->
         <button id="users-btn" class="header-btn">👥</button>
-        <!-- Poll creation button -->
         <button id="poll-btn" class="header-btn">📊</button>
       </div>
     </div>
@@ -26,7 +40,7 @@
       <div id="online-users-list"></div>
     </div>
 
-    <!-- Poll Creation Modal -->
+    <!-- Poll Modal -->
     <div id="poll-modal" class="modal">
       <div class="modal-content">
         <div class="modal-header">
@@ -60,24 +74,25 @@
       </div>
     </div>
 
+    <!-- Main Chat Display -->
     <div id="chat-display">
       <!-- Messages will be injected here dynamically -->
     </div>
 
+    <!-- Sender Input -->
     <div id="sender-display">
       <form id="send-msg">
         <div class="chat-controls">
           <button type="button" id="emoji-btn">😊</button>
-          <!-- File upload button -->
           <input type="file" id="file-input" accept="image/*,video/*,audio/*,.pdf,.doc,.docx,.txt" style="display: none;">
           <button type="button" id="file-btn">📎</button>
-          <!-- Voice record button -->
           <button type="button" id="voice-btn" class="voice-btn">🎤</button>
           <input type="text" id="input" placeholder="Your message goes here" />
           <input type="submit" id="send-button" value="Send" />
         </div>
       </form>
     </div>
+
   </div>
 
   <!-- Voice Recording UI -->
@@ -89,38 +104,6 @@
     <div class="recording-controls">
       <button id="stop-recording-btn" class="primary-btn">Stop & Send</button>
       <button id="cancel-recording-btn" class="secondary-btn">Cancel</button>
-    </div>
-  </div>ead>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>PuruVerse</title>
-  <link rel="stylesheet" href="style.css" />
-  <script src="https://cdn.jsdelivr.net/npm/@joeattardi/emoji-button@4.6.2/dist/index.js"></script>
-</head>
-<body>
-
-  <!-- 🔴 Background Video -->
-  <video autoplay muted loop playsinline id="bgVideo">
-    <source src="video2.mp4" type="video/mp4" />
-    Your browser does not support the video tag.
-  </video>
-
-  <!-- 🔵 Chat Container -->
-  <div id="container">
-    <div id="chat-display">
-      <!-- Messages will be injected here dynamically -->
-    </div>
-    
-<h1 class="welcome-heading">You’re Now in PuruVerse</h1>
-
-    <div id="sender-display">
-      <form id="send-msg">
-        <div class="chat-controls">
-          <button type="button" id="emoji-btn">😊</button>
-          <input type="text" id="input" placeholder="Your message goes here" />
-          <input type="submit" id="send-button" value="Send" />
-        </div>
-      </form>
     </div>
   </div>
 
