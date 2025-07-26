@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<  <!-- 🔵 Chat Container -->
+  <div id="container">
+    <!-- Header with controls -->
+    <div id="chat-header">
+      <h1 class="welcome-heading">PuruVerse</h1>
+      <div id="header-controls">
+        <!-- Dark mode toggle -->
+        <div class="theme-toggle">
+          <input type="checkbox" id="darkModeToggle">
+          <label for="darkModeToggle" class="toggle-label">🌙</label>
+        </div>
+        <!-- Online users list for voice calls -->
+        <button id="users-btn" class="header-btn">👥</button>
+        <!-- Poll creation button -->
+        <button id="poll-btn" class="header-btn">📊</button>
+      </div>
+    </div>
+
+    <!-- Online Users Sidebar -->
+    <div id="users-sidebar" class="sidebar">
+      <div class="sidebar-header">
+        <h3>Online Users</h3>
+        <button id="close-users" class="close-btn">×</button>
+      </div>
+      <div id="online-users-list"></div>
+    </div>
+
+    <!-- Poll Creation Modal -->
+    <div id="poll-modal" class="modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3>Create Poll</h3>
+          <button id="close-poll-modal" class="close-btn">×</button>
+        </div>
+        <div class="modal-body">
+          <input type="text" id="poll-question" placeholder="Enter your question" maxlength="200">
+          <div id="poll-options">
+            <input type="text" class="poll-option" placeholder="Option 1" maxlength="100">
+            <input type="text" class="poll-option" placeholder="Option 2" maxlength="100">
+          </div>
+          <button id="add-poll-option">+ Add Option</button>
+          <div class="modal-actions">
+            <button id="create-poll-btn" class="primary-btn">Create Poll</button>
+            <button id="cancel-poll-btn" class="secondary-btn">Cancel</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Voice Call UI -->
+    <div id="voice-call-ui" class="call-ui">
+      <div class="call-info">
+        <div id="call-status">Calling...</div>
+        <div id="call-user-name"></div>
+      </div>
+      <div class="call-controls">
+        <button id="mute-btn" class="call-btn">🎤</button>
+        <button id="end-call-btn" class="call-btn end-call">📞</button>
+      </div>
+    </div>
+
+    <div id="chat-display">
+      <!-- Messages will be injected here dynamically -->
+    </div>
+
+    <div id="sender-display">
+      <form id="send-msg">
+        <div class="chat-controls">
+          <button type="button" id="emoji-btn">😊</button>
+          <!-- File upload button -->
+          <input type="file" id="file-input" accept="image/*,video/*,audio/*,.pdf,.doc,.docx,.txt" style="display: none;">
+          <button type="button" id="file-btn">📎</button>
+          <!-- Voice record button -->
+          <button type="button" id="voice-btn" class="voice-btn">🎤</button>
+          <input type="text" id="input" placeholder="Your message goes here" />
+          <input type="submit" id="send-button" value="Send" />
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Voice Recording UI -->
+  <div id="voice-recording-ui" class="recording-ui">
+    <div class="recording-info">
+      <div class="recording-indicator">🔴 Recording...</div>
+      <div id="recording-timer">00:00</div>
+    </div>
+    <div class="recording-controls">
+      <button id="stop-recording-btn" class="primary-btn">Stop & Send</button>
+      <button id="cancel-recording-btn" class="secondary-btn">Cancel</button>
+    </div>
+  </div>ead>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PuruVerse</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/@joeattardi/emoji-button@4.6.2/dist/index.js"></script>
+</head>
+<body>
+
+  <!-- 🔴 Background Video -->
+  <video autoplay muted loop playsinline id="bgVideo">
+    <source src="video2.mp4" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
+
+  <!-- 🔵 Chat Container -->
+  <div id="container">
+    <div id="chat-display">
+      <!-- Messages will be injected here dynamically -->
+    </div>
+    
+<h1 class="welcome-heading">You’re Now in PuruVerse</h1>
+
+    <div id="sender-display">
+      <form id="send-msg">
+        <div class="chat-controls">
+          <button type="button" id="emoji-btn">😊</button>
+          <input type="text" id="input" placeholder="Your message goes here" />
+          <input type="submit" id="send-button" value="Send" />
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- 🟢 Scripts -->
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="enhanced-script.js"></script>
+</body>
+</html>
